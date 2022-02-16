@@ -1,0 +1,15 @@
+<svg display="none" xmlns="http://www.w3.org/2000/svg">
+
+
+<symbol id="plus"  viewBox="0 0 27 27">                             
+<g>
+<circle cx="13.365" cy="13.365" r="11.865" stroke="#0076FF" stroke-width="3" />
+<path d="M12.945 6V19.89" stroke="#0076FF" stroke-width="3" />
+<path d="M19.89 12.945L6 12.945" stroke="#0076FF" stroke-width="3" />
+</g>
+</symbol>
+
+
+
+
+</svg>

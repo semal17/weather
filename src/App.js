@@ -1,11 +1,15 @@
+import Main from './pages/Main/Main';
+import City from './pages/City/City';
+import Adds from './pages/Adds/Adds';
 
-import './App.css';
 
 function App() {
   return (
-    <div>
-      здорова Леха
-    </div>
+    <>
+      <Main />    
+      <City />  
+      <Adds />
+    </>
   );
 }
 

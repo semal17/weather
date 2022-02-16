@@ -1,0 +1,26 @@
+.header {
+    padding: 62px 9px 10px;
+}
+
+.header__wrapper {
+    display: none;
+}
+
+.header-day {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-day__text {
+    font-size: 30px;
+line-height: 36px;
+}
+
+.header-day__week {
+    display: none;
+}
+
+.header-day__link-plus {
+    width: 27px;
+    height: 27px;
+}

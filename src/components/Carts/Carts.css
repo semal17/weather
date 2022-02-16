@@ -1,0 +1,37 @@
+.carts {
+    padding: 50px 9px 0;
+}
+
+.cart {
+    margin-bottom: 17px;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    min-height: 216px;
+}
+
+.cart__container {
+    padding: 39px 41px;
+    height: 100%;
+}
+
+.cart__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.cart__weather {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.cart__time {
+    color: #0076FF;
+}
+
+.cart__num {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 18px;
+}
