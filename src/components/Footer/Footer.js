@@ -1,11 +1,12 @@
 import './Footer.css';
+import {Link} from 'react-router-dom';
 
 
 function Footer() {
     return (
         <footer className="footer container">
            <div className="footer__wrapper">
-               <a className="footer__link" href="#">+ Add City</a>
+               <Link className="footer__link" to="/adds">+ Add City</Link>
                <div className="footer__temp">
                    <p className="footer__temp-change">&deg;C</p>
                    <p className="footer__temp-change footer__temp-change--active">&deg;F</p>

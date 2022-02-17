@@ -1,7 +1,8 @@
 
 function City() {
     return (
-      <>      
+      <> 
+      <p>Add new city</p>     
       </>
     );
   }

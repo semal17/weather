@@ -1,5 +1,7 @@
 
 import './Carts.css';
+import Time from '../Time/Time';
+import {Link} from 'react-router-dom';
 
 
 function Carts() {
@@ -7,11 +9,11 @@ function Carts() {
         <section className="carts container">
             <ul className="carts__wrapper">
                 <li className="cart">
-                    <a href="#">
+                <Link to="/city">
                         <div className="cart__container">
                             <div className="cart__wrapper">
                                 <p className="cart__weather">Showers</p>
-                                <p className="cart__time">10:03 am</p>
+                                <Time />
                             </div>
                             <div className="cart__temp">
                                 <p className="cart__num">34&deg;</p>
@@ -19,15 +21,15 @@ function Carts() {
                             </div>
                             <p className="cart__location">Columbia Falls, MT</p>
                         </div>
-                    </a>
+                    </Link>
                 </li>
 
                 <li className="cart">
-                    <a href="#">
+                <Link to="/city">
                         <div className="cart__container">
                             <div className="cart__wrapper">
                                 <p className="cart__weather">Showers</p>
-                                <p className="cart__time">10:03 am</p>
+                                <Time />
                             </div>
                             <div className="cart__temp">
                                 <p className="cart__num">34&deg;</p>
@@ -35,7 +37,7 @@ function Carts() {
                             </div>
                             <p className="cart__location">Columbia Falls, MT</p>
                         </div>
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </section>
