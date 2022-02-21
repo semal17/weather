@@ -1,14 +1,14 @@
 
 
 import Header from '../../components/Header/Header';
-import Carts from '../../components/Carts/Carts';
+import Cards from '../../components/Cards/Cards';
 import Footer from '../../components/Footer/Footer';
 
 function Main() {
   return (
     <>
       <Header />
-      <Carts />
+      <Cards />
       <Footer />
     </>
   );
