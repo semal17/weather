@@ -8,7 +8,7 @@ function Footer() {
             <div className="footer__wrapper">
                 <Link className="footer__link" to="/adds">+ Add City</Link>
                 <label className="checkbox">
-                    <input type="checkbox" defaultChecked />
+                    <input type="checkbox" />
                     <span className="checkbox-switch" data-label-on="&deg;C" data-label-off="&deg;F"></span>
                 </label>
                 {/* <div className="footer__temp">

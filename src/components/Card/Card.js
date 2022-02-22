@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Card(props) {
     
     return (                      
-                <li key={props.weather.city.id} className="card">
+                <li className="card">
                     <Link to="/city">
                         <div className="card__container">
                             <div className="card__wrapper">
@@ -14,12 +14,12 @@ function Card(props) {
                                 <Time />
                             </div>
                             <div className="card__temp">
-                                <p className="card__num">{props.weather.list[0].main.temp}&deg;</p>
+                                <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
                             </div>
                             <p className="card__location">{props.weather.city.name}</p>
                         </div>
                     </Link>
-                </li>               
+                </li>                              
     );
 }
 
