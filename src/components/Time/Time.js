@@ -1,9 +1,9 @@
 
 import './Time.css';
 
-function Time() {
+function Time(props) {
     return (
-        <p className="time">10:03 am</p>
+        <p className="time">{props.time.dt_txt.slice(11, 16)}</p>
     );
 }
 

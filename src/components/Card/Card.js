@@ -11,7 +11,7 @@ function Card(props) {
                         <div className="card__container">
                             <div className="card__wrapper">
                                 <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
-                                <Time />
+                                <Time time={props.weather.list[0]}/>
                             </div>
                             <div className="card__temp">
                                 <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
