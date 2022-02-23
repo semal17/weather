@@ -3,6 +3,8 @@ import './Header.css';
 import logo from '../../images/logo.png';
 import {Link} from 'react-router-dom';
 
+import Search from '../Search/Search';
+
 function Header() {
     return (
         <header className="header container">
@@ -11,7 +13,7 @@ function Header() {
                     <img className="header-logo__img" src={logo} alt="" />
                     <p className="header-logo__text">Weather</p>
                 </div>
-                <input className="header__search" type="search" placeholder="Search City"></input>
+                <Search />
             </div>
             <div className="header-day">
                 <p className="header-day__text">Today</p>

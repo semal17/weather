@@ -6,6 +6,11 @@
     display: none;
 }
 
+.header-logo__img {
+    width: 60px;
+    height: 60px;
+}
+
 .header-day {
     display: flex;
     justify-content: space-between;
@@ -13,14 +18,67 @@
 
 .header-day__text {
     font-size: 30px;
-line-height: 36px;
+    line-height: 36px;
 }
 
 .header-day__week {
     display: none;
 }
 
-.header-day__link-plus {
-    width: 27px;
-    height: 27px;
+
+
+@media (min-width: 620px) {
+    .header {
+        padding: 65px 9px 0;
+    }
+
+    .header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 55px;
+    }
+
+    .header-logo__wrapper {
+        display: flex;
+        width: 100%;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .header-logo__text {
+        margin-left: 20px;
+    }
+
+    .header-day {
+        justify-content: start;
+    }
+
+    .header-day__week {
+        display: block;
+        font-size: 30px;
+        line-height: 36px;
+        color: #7F7F7F;
+        margin-left: 12px;
+    }
+
+    .header-day__link {
+        display: none;
+    }
+}
+
+@media (min-width: 1382px) {
+    .header {
+        padding: 60px 9px 0;
+    }
+
+    .header__wrapper {
+        padding-bottom: 119px;
+    }
+
+    .header-logo__text {
+        margin-left: 20px;
+        font-size: 50px;
+        line-height: 60px;
+    }
 }

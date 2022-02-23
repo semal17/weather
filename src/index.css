@@ -68,8 +68,27 @@ line-height: 36px;
 }
 
 .container {  
-  width: 320px;   
+  width: 320px;     
   padding: 0 9px; 
   margin: 0 auto;
 }
+
+@media (min-width: 414px) {
+  .container {  
+    width: 360px;      
+  }
+}
+
+@media (min-width: 620px) {
+  .container {  
+    width: 613px;      
+  }
+}
+
+@media (min-width: 1382px) {
+  .container {  
+    width: 1382px;      
+  }
+}
+
 

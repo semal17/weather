@@ -1,0 +1,22 @@
+.header__search {
+    width: 300px;
+    height: 32px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #A6A6A6;
+    background: #E8E8E8;
+    border-radius: 8px;
+    padding-left: 40px;
+
+}
+
+@media (min-width: 1382px) {
+    .header__search {
+        width: 540px;
+        height: 70px;
+        font-size: 22px;
+        line-height: 26px;
+        border-radius: 20px;
+        padding-left: 40px;
+    }
+}
