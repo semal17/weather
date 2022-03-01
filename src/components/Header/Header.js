@@ -1,11 +1,11 @@
 
 import './Header.css';
 import logo from '../../images/logo.png';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Search from '../Search/Search';
 
-function Header() {
+function Header(props) {
     return (
         <header className="header container">
             <div className="header__wrapper">
@@ -16,6 +16,7 @@ function Header() {
                 <Search />
             </div>
             <div className="header-day">
+                {props.arrow}
                 <p className="header-day__text">Today</p>
                 <p className="header-day__week">Wednesday</p>
                 <Link to="/adds" className="header-day__link">
