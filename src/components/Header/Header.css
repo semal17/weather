@@ -17,6 +17,18 @@
     align-items: center;
 }
 
+.header-day__text-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__arrow {
+    margin-right: 13px;
+    width: 12px;
+    height: 24px;
+    
+}
+
 .header-day__text {
     font-size: 30px;
     line-height: 36px;
@@ -26,6 +38,10 @@
     display: none;
 }
 
+.header-day__link {
+    width: 27px;
+    height: 27px;
+}
 
 
 @media (min-width: 620px) {

@@ -16,8 +16,13 @@ function Header(props) {
                 <Search />
             </div>
             <div className="header-day">
+                <div className="header-day__text-wrapper">
                 {props.arrow}
                 <p className="header-day__text">Today</p>
+                
+                </div>
+                {/* {props.arrow}
+                <p className="header-day__text">Today</p> */}
                 <p className="header-day__week">Wednesday</p>
                 <Link to="/adds" className="header-day__link">
                     <svg className="header-day__link-img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
