@@ -23,7 +23,7 @@ function City() {
   return (
     <>
       <Header arrow={arrowHeader} />
-      <main>
+      <main className="container">
         <CityCard />
         <Ours />
         <Week />
