@@ -1,0 +1,56 @@
+.week-day {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.week-day__name {
+    color: #7F7F7F;
+}
+
+.week-day__temp {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.week-day__temp--min {
+    color: #7F7F7F;
+}
+
+
+.hours__list {
+    display: flex;
+    margin-top: 27px;
+    margin-bottom: 50px;
+}
+
+.hours__item {
+    width: 60px;
+    height: 115px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+.hours__item--active {
+    width: 95px;
+    height: 115px;
+    background: #FFFFFF;
+    box-shadow: 2px 5px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 18px;
+}
+
+.hours__time {
+    color: #7F7F7F;
+}
+
+.hours__time--active {
+    color: #0076FF;
+}

@@ -4,23 +4,24 @@
     background: #FFFFFF;
     box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.1);
     border-radius: 26px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .personal-card__wrapper {
     display: flex;
     flex-direction: column;
+    padding: 60px 46px;
 }
 
 .personal-card__wheather {
     color: rgba(0, 0, 0, 0.5);
-
 }
-
-
 
 .personal-card__temp {
     font-size: 50px;
     line-height: 60px;
+    padding: 19px 0;
 }
 
 .personal-card__today {

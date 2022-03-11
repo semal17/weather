@@ -1,0 +1,26 @@
+.week__list {
+    padding-bottom: 35px;
+}
+
+.week__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 20px;
+}
+
+.week__name {
+    color: #7F7F7F;
+}
+
+.week__temp {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.week__temp--min {
+    color: #7F7F7F;
+}

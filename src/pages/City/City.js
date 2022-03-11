@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header/Header';
 import CityCard from '../../components/CityCard/CityCard';
-import Ours from '../../components/Ours/Ours';
+import Hours from '../../components/Hours/Hours';
 import Week from '../../components/Week/Week';
 import Info from '../../components/Info/Info';
 import Footer from '../../components/Footer/Footer';
@@ -25,7 +25,7 @@ function City() {
       <Header arrow={arrowHeader} />
       <main className="container">
         <CityCard />
-        <Ours />
+        <Hours />
         <Week />
         <Info />
       </main>
