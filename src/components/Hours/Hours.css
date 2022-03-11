@@ -20,6 +20,9 @@
     color: #7F7F7F;
 }
 
+.hours {
+    grid-area: C;
+}
 
 .hours__list {
     display: flex;
@@ -53,4 +56,33 @@
 
 .hours__time--active {
     color: #0076FF;
+}
+
+@media (min-width: 620px) {
+    .week-day {
+        width: 296px;
+    }
+
+    .hours__list {
+        margin-top: 30px;
+        margin-bottom: 83px;
+    }
+
+    .hours__item {
+        width: 69.85px;
+        height: 133.88px;
+    }
+
+    .hours__item--active {
+        width: 111px;
+        height: 134px;
+    }
+}
+
+
+@media (min-width: 1382px) {
+    .week-day {
+        width: 296px;
+
+    }
 }

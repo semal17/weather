@@ -19,17 +19,22 @@ function City() {
       <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
     </svg>
   </Link>;
+
+  const hiddenOnMobile  = 'footer  container footer--none';
+  const hiddenDay = 'header-day heder-day--none';
+  const logoText = 'Wednesday, January 23';
+  const styleText = 'header-logo__text header-logo__text--size';
   
   return (
     <>
-      <Header arrow={arrowHeader} />
-      <main className="container">
+      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} />
+      <main className="container city-wrapper">
         <CityCard />
         <Hours />
         <Week />
         <Info />
       </main>
-      <Footer />
+      <Footer isHiddenOnMobile={hiddenOnMobile}/>
     </>
   );
 }

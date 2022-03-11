@@ -1,0 +1,19 @@
+@media (min-width: 620px) {
+	.city-wrapper {
+        display: grid;
+        grid-template-areas: 
+    "A A B B"
+    "A A B B"
+    "C C C C"
+    "D D D D"
+    "D D D D";
+    }
+    
+}
+
+@media (min-width: 1382px) {
+	.city-wrapper {
+        display: grid;
+    }
+    
+}

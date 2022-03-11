@@ -6,10 +6,7 @@
     display: none;
 }
 
-.header-logo__img {
-    width: 60px;
-    height: 60px;
-}
+
 
 .header-day {
     display: flex;
@@ -26,7 +23,6 @@
     margin-right: 13px;
     width: 12px;
     height: 24px;
-    
 }
 
 .header-day__text {
@@ -49,6 +45,10 @@
         padding: 65px 9px 0;
     }
 
+    .heder-day--none {
+        display: none;
+    }
+
     .header__wrapper {
         display: flex;
         align-items: center;
@@ -58,6 +58,7 @@
 
     .header-logo__wrapper {
         display: flex;
+        align-items: center;
         width: 100%;
         font-size: 30px;
         line-height: 36px;
@@ -67,8 +68,22 @@
         margin-left: 20px;
     }
 
+    .header-logo__text--size {
+        font-size: 23px;
+        line-height: 27px;
+    }
+
+    .header-logo__img {
+        width: 40px;
+        height: 40px;
+    }
+
     .header-day {
         justify-content: start;
+    }
+
+    .header__arrow {
+        margin-right: 20px;
     }
 
     .header-day__week {
@@ -97,5 +112,10 @@
         margin-left: 20px;
         font-size: 50px;
         line-height: 60px;
+    }
+
+    .header-logo__img {
+        width: 60px;
+        height: 60px;
     }
 }

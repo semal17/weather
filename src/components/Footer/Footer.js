@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 
 
-function Footer() {
-
+function Footer(props) {
     let date = new Date();
     let ours = date.getHours();
     let minutes = date.getMinutes();
+
     return (
-        <footer className="footer container">
+        <footer className={props.isHiddenOnMobile}>
             <div className="footer__line"></div>
             <div className="footer__wrapper">
                 <Link className="footer__link" to="/adds">+ Add City</Link>
