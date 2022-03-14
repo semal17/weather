@@ -6,6 +6,10 @@
 	display: none;
 }
 
+.footer-city {
+	display: none;
+}
+
 .footer__line {
 	display: none;
 }
@@ -116,7 +120,7 @@
 }
 
 
-@media (min-width: 620px) {
+@media (min-width: 626px) {
 	.footer {
 		padding-top: 200px;
 
@@ -162,5 +166,16 @@
 
 	.footer__wrapper {
 		padding-bottom: 42px;
+	}
+
+	.footer-city {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer-city__text {
+		font-size: 25px;
+line-height: 30px;
+padding-left: 13px;
 	}
 }

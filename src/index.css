@@ -79,7 +79,7 @@ line-height: 36px;
   }
 }
 
-@media (min-width: 620px) {
+@media (min-width: 626px) {
   .container {  
     width: 626px;      
   }

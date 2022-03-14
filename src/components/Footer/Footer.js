@@ -16,7 +16,8 @@ function Footer(props) {
                 <label className="checkbox">
                     <input type="checkbox" defaultChecked />
                     <span className="checkbox-switch" data-label-on="&deg;C" data-label-off="&deg;F"></span>
-                </label>                            
+                </label>  
+                {props.city}                          
                 <p className="footer__time">{ours}:{minutes}</p>
             </div>
             <p className="footer__copyright">Powered by The Weather Channel</p>

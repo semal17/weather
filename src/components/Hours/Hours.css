@@ -40,6 +40,8 @@
     align-items: center;
     cursor: pointer;
     padding: 12px 0;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .hours__item--active {
@@ -58,7 +60,7 @@
     color: #0076FF;
 }
 
-@media (min-width: 620px) {
+@media (min-width: 626px) {
     .week-day {
         width: 296px;
     }
@@ -69,8 +71,8 @@
     }
 
     .hours__item {
-        width: 69.85px;
-        height: 133.88px;
+        width: 70px;
+        height: 134px;
     }
 
     .hours__item--active {
@@ -82,7 +84,27 @@
 
 @media (min-width: 1382px) {
     .week-day {
-        width: 296px;
-
+        width: 381px;
     }
+
+    .hours {
+        margin-left: 152px;
+    }
+
+    .hours__list {
+        margin-top: 38px;
+        margin-bottom: 0px;
+    }
+
+    .hours__item {
+        width: 90px;
+        height: 173px;
+        padding: 18px 0;
+    }
+
+    .hours__item--active {
+        width: 143px;
+        height: 173px;
+    }
+
 }

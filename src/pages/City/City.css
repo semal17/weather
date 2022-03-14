@@ -1,4 +1,4 @@
-@media (min-width: 620px) {
+@media (min-width: 626px) {
 	.city-wrapper {
         display: grid;
         grid-template-areas: 
@@ -13,7 +13,10 @@
 
 @media (min-width: 1382px) {
 	.city-wrapper {
-        display: grid;
+        grid-template-areas: 
+        "A C C"        
+        "B D D"
+        "B D D";
     }
     
 }
