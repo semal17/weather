@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 function Cards() {
     const [arr, setArr] = useState([]);
-
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -22,7 +21,6 @@ function Cards() {
                     setItems(result);
                     // setArr([...arr, result]);
                     setIsLoaded(true);
-
                 },
                 (error) => {
                     setError(error);
@@ -40,7 +38,7 @@ function Cards() {
             <p>Загрузка...</p>
         </section>;
     } else {
-        console.log(items);
+        // console.log(items);
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">

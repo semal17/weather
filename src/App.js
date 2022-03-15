@@ -4,22 +4,24 @@ import {
   Route
 } from "react-router-dom";
 
+
 import Main from './pages/Main/Main';
 import City from './pages/City/City';
 import Adds from './pages/Adds/Adds';
 import Error from './pages/Error/Error';
 
+const arr = 11;
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Main />} />
+        <Route exact path="/" element={<Main arrs={arr} />} />
         <Route path="city" element={<City />} />
         <Route path="adds" element={<Adds />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </BrowserRouter>  
+    </BrowserRouter>
   );
 }
 

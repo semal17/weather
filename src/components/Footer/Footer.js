@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 
-function Footer(props) {
-    let date = new Date();
-    let ours = date.getHours();
-    let minutes = date.getMinutes();
+
+function Footer(props) { 
 
     return (
         <footer className={props.isHiddenOnMobile}>
@@ -18,7 +16,7 @@ function Footer(props) {
                     <span className="checkbox-switch" data-label-on="&deg;C" data-label-off="&deg;F"></span>
                 </label>  
                 {props.city}                          
-                <p className="footer__time">{ours}:{minutes}</p>
+                <p className="footer__time">{props.our}:{props.minute}</p>
             </div>
             <p className="footer__copyright">Powered by The Weather Channel</p>
         </footer>
