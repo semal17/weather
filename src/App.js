@@ -10,13 +10,14 @@ import City from './pages/City/City';
 import Adds from './pages/Adds/Adds';
 import Error from './pages/Error/Error';
 
-const arr = 11;
 
-function App() {
+
+
+function App() {  
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Main arrs={arr} />} />
+        <Route exact path="/" element={<Main />} />
         <Route path="city" element={<City />} />
         <Route path="adds" element={<Adds />} />
         <Route path="*" element={<Error />} />

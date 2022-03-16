@@ -9,22 +9,22 @@ function Main() {
   const hiddenOnMobile = 'footer  container';
   const hiddenDay = "header-day";
   const logoText = 'Weather';
-  const styleText = 'header-logo__text';
+  const styleText = 'header-logo__text'; 
+
 
   const [date, setDate] = useState(new Date());
-  let ours = date.getHours();
-  let minutes = date.getMinutes();
-  useEffect(() => {
-    const updateTime = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    return () => clearInterval(updateTime);
-  });
-
+    let ours = date.getHours();
+    let minutes = date.getMinutes();   
+    useEffect(() => {
+      const updateTime = setInterval(() => {
+        setDate(new Date());
+      }, 1000);
+      return () => clearInterval(updateTime);
+    }); 
 
   return (
     <>
-      <Header isHiddenDay={hiddenDay} text={logoText} style={styleText} />
+      <Header isHiddenDay={hiddenDay} text={logoText} style={styleText}  />
       <Cards />
       <Footer isHiddenOnMobile={hiddenOnMobile} our={ours} minute={minutes} />
     </>

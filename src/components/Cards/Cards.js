@@ -28,7 +28,7 @@ function Cards() {
                 }
             )
     }, [])
-
+    
     if (error) {
         return <section className="cards container">
             <p>Ошибка.</p>
@@ -38,7 +38,7 @@ function Cards() {
             <p>Загрузка...</p>
         </section>;
     } else {
-        // console.log(items);
+        console.log(items);
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
@@ -57,9 +57,9 @@ function Cards() {
                     </li>                    
                 </ul>
             </section>
-        );
+        );        
     }
+    
 }
-
 
 export default Cards;
