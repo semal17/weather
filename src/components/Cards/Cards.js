@@ -38,7 +38,7 @@ function Cards() {
             <p>Загрузка...</p>
         </section>;
     } else {
-        console.log(items);
+        // console.log(items);
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">

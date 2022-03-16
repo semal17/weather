@@ -1,0 +1,18 @@
+.time-now {
+    display: block;
+    color: #0076FF;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.time--none {
+    display: none;
+}
+
+@media (min-width: 626px) {
+    .time--none {
+        display: block;
+    }
+    
+}
+

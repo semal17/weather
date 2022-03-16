@@ -2,18 +2,19 @@ import './City.css';
 import { Link } from 'react-router-dom';
 
 
-
 import Header from '../../components/Header/Header';
 import CityCard from '../../components/CityCard/CityCard';
 import Hours from '../../components/Hours/Hours';
 import Week from '../../components/Week/Week';
 import Info from '../../components/Info/Info';
 import Footer from '../../components/Footer/Footer';
+import TimeNow from '../../components/TimeNow/TimeNow';
 
 
 
 
 function City() {
+
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
@@ -24,6 +25,9 @@ function City() {
   const hiddenDay = 'header-day heder-day--none';
   const logoText = 'Wednesday, January 23';
   const styleText = 'header-logo__text header-logo__text--size';
+  const headerTitle = 'Chandler';
+  const timeClass = 'time-now';
+  const timeNow = <TimeNow displayNone={timeClass} />;
   const addCity = <div className="footer-city">
     <svg className="footer-city__img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_9_175)">
@@ -42,14 +46,14 @@ function City() {
 
   return (
     <>
-      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} />
+      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={timeNow} />
       <main className="container city-wrapper">
         <CityCard />
         <Hours />
         <Week />
         <Info />
       </main>
-      <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} />
+      <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
     </>
   );
 }

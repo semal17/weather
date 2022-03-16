@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 
 import Header from '../../components/Header/Header';
 import Cards from '../../components/Cards/Cards';
 import Footer from '../../components/Footer/Footer';
+import TimeNow from '../../components/TimeNow/TimeNow';
 
 function Main() {
 
@@ -10,23 +12,24 @@ function Main() {
   const hiddenDay = "header-day";
   const logoText = 'Weather';
   const styleText = 'header-logo__text'; 
+  const headerTitle = 'Today';
+  const timeClass = 'time-now time--none';
+  const timeNow = <TimeNow displayNone={timeClass}/>;
+  const headerAdds = <Link to="/adds" className="header-day__link">
+  <svg className="header-day__link-img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="13.365" cy="13.365" r="11.865" stroke="#0076FF" strokeWidth="3" />
+      <path d="M12.945 6V19.89" stroke="#0076FF" strokeWidth="3" />
+      <path d="M19.89 12.945L6 12.945" stroke="#0076FF" strokeWidth="3" />
+  </svg>
+</Link>;
 
 
-  const [date, setDate] = useState(new Date());
-    let ours = date.getHours();
-    let minutes = date.getMinutes();   
-    useEffect(() => {
-      const updateTime = setInterval(() => {
-        setDate(new Date());
-      }, 1000);
-      return () => clearInterval(updateTime);
-    }); 
 
   return (
     <>
-      <Header isHiddenDay={hiddenDay} text={logoText} style={styleText}  />
+      <Header isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={headerAdds}/>
       <Cards />
-      <Footer isHiddenOnMobile={hiddenOnMobile} our={ours} minute={minutes} />
+      <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} />
     </>
   );
 }
