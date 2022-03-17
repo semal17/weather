@@ -6,6 +6,7 @@ import Search from '../Search/Search';
 
 
 function Header(props) {
+    const search = 'search';
     return (
         <header className="header container">
             <div className="header__wrapper">
@@ -14,7 +15,7 @@ function Header(props) {
                     <img className="header-logo__img" src={logo} alt="" />
                     <p className={props.style}>{props.text}</p>
                 </div>
-                <Search />
+                <Search classSearch={search}/>
             </div>
             <div className={props.isHiddenDay}>
                 <div className="header-day__text-wrapper">

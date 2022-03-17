@@ -23,8 +23,6 @@ function Main() {
   </svg>
 </Link>;
 
-
-
   return (
     <>
       <Header isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={headerAdds}/>

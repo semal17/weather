@@ -7,6 +7,7 @@ import Result from '../../components/Result/Result';
 import Location from '../../components/Location/Location';
 import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
+import Search from '../../components/Search/Search';
 
 
 
@@ -24,6 +25,7 @@ function Adds() {
   const styleText = 'header-logo__text header-logo__text--size';
   const headerTitle = 'Add City';
   const timeClass = 'time-now';
+  const search = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const addCity = <div className="footer-city">
     <svg className="footer-city__img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,8 +46,11 @@ function Adds() {
   return (
     <>
       <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={timeNow} />
+      <main className="container">
+      <Search classSearch={search}/>
       <Result />
       <Location />
+      </main>
       <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
     </>
   );

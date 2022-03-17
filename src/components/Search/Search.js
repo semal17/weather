@@ -1,9 +1,9 @@
 import './Search.css';
 
 
-function Search() {
+function Search(props) {
     return (
-        <input className="header__search" type="search" placeholder="Search City"></input>
+        <input className={props.classSearch} type="search" placeholder="Search City"></input>
     );
 }
 
