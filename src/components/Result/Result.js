@@ -2,9 +2,9 @@ import './Result.css';
 
 function Result() {
     return (
-        <>
-         <p>result</p>  
-        </>
+        <section className="result">
+         <p className="result__text">No Result</p>  
+        </section>
     );
 }
 
