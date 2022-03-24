@@ -11,6 +11,10 @@
     height: 100%;
 }
 
+.card__container--red {
+    background-color: red;
+}
+
 .card__wrapper {
     display: flex;
     flex-direction: row;

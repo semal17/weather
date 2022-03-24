@@ -1,14 +1,23 @@
 import './Card.css';
 import Time from '../Time/Time';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function Card(props) {
-    
+    const [color, setColor] = useState("card__container");
+    let onCardClick = (event) => {
+        if (color == "card__container card__container--red") {
+            setColor("card__container");
+        } else {
+            setColor("card__container card__container--red");
+        }
+        
+    }
     return (                      
-                <li className="card">
+                <li className="card" onClick={onCardClick}>
                     <Link to="/city">
-                        <div className="card__container">
+                        <div className={color}>
                             <div className="card__wrapper">
                                 <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
                                 <Time time={props.weather.list[0]}/>
