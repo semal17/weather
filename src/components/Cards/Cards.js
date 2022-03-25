@@ -42,7 +42,7 @@ function Cards() {
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
-                    {items.map(item => <Card key={item.city.id} weather={item} />)}
+                    {items.map(item => <Card key={item.city.id} weather={item} onDeleted={ (event) => console.log(event.target)} />)}
                     <li className="card card__add">
                         <Link to="/adds">
                             <div className="card__adds">
