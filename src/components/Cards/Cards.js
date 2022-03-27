@@ -41,25 +41,12 @@ function Cards() {
         </section>;
     } else {
         // console.log(items);      
-
-        let deleteItem = (id) => {
-            setItems(() => {
-                const idx = items.findIndex((el) => el.city.id === id);
-                const arr = [...items.slice(0, idx), ...items.slice(idx + 1)];
-                return arr;
-            })
-        }
-
-        let addItem = (text) => {
-            console.log(text);
-        }
-
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
-                    {items.map(item => <Card key={item.city.id} weather={item} onDeleted={(id) => deleteItem(id)} />)}
-                    <li className="card card__add" onClick={ () => addItem('hy')}>
-                        {/* <Link to="/adds"> */}
+                    {items.map(item => <Card key={item.city.id} weather={item} />)}
+                    <li className="card card__add">
+                        <Link to="/adds">
                             <div className="card__adds">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="8" stroke="#0076FF" strokeWidth="2" />
@@ -68,7 +55,7 @@ function Cards() {
                                 </svg>
                                 <p className="card__adds--text">Add City</p>
                             </div>
-                        {/* </Link> */}
+                        </Link>
                     </li>
                 </ul>
             </section>

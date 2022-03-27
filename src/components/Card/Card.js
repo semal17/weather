@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Card(props) {
     
     return (                      
-                <li className="card" onClick={ () => props.onDeleted(props.weather.city.id)} >
+                <li className="card">
                     <Link to="/city">
                         <div className="card__container">
                             <div className="card__wrapper">
