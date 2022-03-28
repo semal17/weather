@@ -1,8 +1,10 @@
 import './Cards.css';
-import Card from '../Card/Card';
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import Card from '../Card/Card';
+import Spinner from '../Spinner/Spinner';
 
 function Cards() {
     const [arr, setArr] = useState([]);
@@ -37,7 +39,7 @@ function Cards() {
         </section>;
     } else if (!isLoaded) {
         return <section className="cards container">
-            <p>Загрузка...</p>
+            <Spinner />
         </section>;
     } else {
         // console.log(items);      

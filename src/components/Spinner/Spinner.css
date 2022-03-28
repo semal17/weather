@@ -1,0 +1,34 @@
+
+@keyframes spinner__intro {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
+.spinner__intro div {  
+  position: absolute;
+  animation: spinner__intro 1.09s linear infinite;
+  width: 162px;
+  height: 162px;
+  top: 54px;
+  left: 54px;
+  border-radius: 50%;
+  box-shadow: 0 4.86px 0 0 #0076ff;
+  transform-origin: 81px 83.43px;
+}
+.spinner {
+  width: 270px;
+  height: 270px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  background: none;
+}
+.spinner__intro {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; 
+}
+.spinner__intro div { box-sizing: content-box; }
