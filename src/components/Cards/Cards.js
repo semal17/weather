@@ -42,7 +42,7 @@ function Cards() {
             <Spinner />
         </section>;
     } else {
-        // console.log(items);      
+             
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
