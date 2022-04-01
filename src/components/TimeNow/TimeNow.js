@@ -5,8 +5,9 @@ import { useState, useEffect } from 'react';
 function TimeNow(props) {
 
     const [date, setDate] = useState(new Date());
-    let ours = date.getHours();
-    let minutes = date.getMinutes();   
+    // let ours = date.getHours();
+    // let minutes = date.getMinutes();   
+    const minutes = date.toLocaleString("ru-ru", { hour: '2-digit', minute: '2-digit'});
     useEffect(() => {
       const updateTime = setInterval(() => {
         setDate(new Date());
@@ -16,7 +17,7 @@ function TimeNow(props) {
 
 
     return (
-        <p className={props.displayNone}>{ours}:{minutes}</p>
+        <p className={props.displayNone}>{minutes}</p>
     );
 }
 

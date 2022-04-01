@@ -2,8 +2,7 @@ import './Card.css';
 import Time from '../Time/Time';
 import { Link } from 'react-router-dom';
 
-function Card(props) {
-    
+function Card(props) {    
     return (                      
                 <li className="card">
                     <Link to="/city">
