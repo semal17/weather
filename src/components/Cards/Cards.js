@@ -37,12 +37,13 @@ function Cards() {
         return <section className="cards container">
             <p>Ошибка.</p>
         </section>;
-    } else if (!isLoaded) {
+    }
+    else if (!isLoaded) {
         return <section className="cards container">
             <Spinner />
         </section>;
-    } else {
-             
+    }
+     else {             
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
@@ -63,7 +64,6 @@ function Cards() {
             </section>
         );
     }
-
 }
 
 export default Cards;

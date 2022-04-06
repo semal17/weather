@@ -17,7 +17,6 @@ function Footer(props) {
                 </label>  
                 {props.city}
                 {props.time}                          
-                {/* <p className="footer__time">{props.our}:{props.minute}</p> */}
             </div>
             <p className="footer__copyright">Powered by The Weather Channel</p>
         </footer>
