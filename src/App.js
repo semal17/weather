@@ -4,13 +4,10 @@ import {
   Route
 } from "react-router-dom";
 
-
 import Main from './pages/Main/Main';
 import City from './pages/City/City';
 import Adds from './pages/Adds/Adds';
 import Error from './pages/Error/Error';
-
-
  
 
 function App() {  

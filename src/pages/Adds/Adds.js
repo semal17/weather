@@ -19,7 +19,7 @@ function Adds() {
     </svg>
   </Link>;
 
-  const hiddenOnMobile = 'footer  container footer--none';
+  const hiddenOnMobile = 'footer container footer--none';
   const hiddenDay = 'header-day heder-day--none';
   const logoText = 'Weather';
   const styleText = 'header-logo__text header-logo__text--size';
@@ -41,7 +41,6 @@ function Adds() {
     </svg>
     <p className="footer-city__text">Chandler, AZ</p>
   </div>;
-
 
   return (
     <>

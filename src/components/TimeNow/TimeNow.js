@@ -13,7 +13,6 @@ function TimeNow(props) {
       return () => clearInterval(updateTime);
     }); 
 
-
     return (
         <p className={props.displayNone}>{time}</p>
     );
