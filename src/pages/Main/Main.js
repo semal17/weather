@@ -6,7 +6,7 @@ import Cards from '../../components/Cards/Cards';
 import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
 
-function Main() {
+function Main(props) {
 
   const hiddenOnMobile = 'footer  container';
   const hiddenDay = "header-day";
@@ -25,8 +25,8 @@ function Main() {
 
   return (
     <>
-      <Header isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={headerAdds}/>
-      <Cards />
+      <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds}/>
+      <Cards onPicking={ (lat, lon) => props.onPicking(lat, lon)}/>
       <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} />
     </>
   );

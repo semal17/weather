@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Card(props) {    
     return (                      
-                <li className="card">
+                <li className="card" onClick={props.onPicking}>
                     <Link to="/city">
                         <div className="card__container">
                             <div className="card__wrapper">

@@ -13,7 +13,7 @@ function Header(props) {
                 <div className="header-logo__wrapper">
                 {props.arrow}
                     <img className="header-logo__img" src={logo} alt="" />
-                    <p className={props.style}>{props.text}</p>
+                    <p className={props.styles}>{props.text}</p>
                 </div>
                 <Search classSearch={search}/>
             </div>

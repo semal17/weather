@@ -44,7 +44,7 @@ function Adds() {
 
   return (
     <>
-      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={timeNow} />
+      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
       <main className="container">
       <Search classSearch={search}/>
       <Result />

@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Spinner from '../Spinner/Spinner';
 
-function Cards() {
+function Cards(props) {
     const [arr, setArr] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-
 
 
     useEffect(() => {
@@ -47,7 +46,7 @@ function Cards() {
         return (
             <section className="cards container">
                 <ul className="cards__wrapper">
-                    {items.map(item => <Card key={item.city.id} weather={item} />)}
+                    {items.map(item => <Card key={item.city.id} weather={item} onPicking={ () => props.onPicking(item.city.coord.lat, item.city.coord.lon)} />)}
                     <li className="card card__add">
                         <Link to="/adds">
                             <div className="card__adds">

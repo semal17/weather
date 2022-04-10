@@ -13,7 +13,7 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 
 
 
-function City() {
+function City(props) {
 
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,12 +43,11 @@ function City() {
     <p className="footer-city__text">Chandler, AZ</p>
   </div>;
 
-
   return (
     <>
-      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} style={styleText} headerText={headerTitle} adds={timeNow} />
+      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
       <main className="container city-wrapper">
-        <CityCard />
+        <CityCard lat={props.lat} lon={props.lon} />
         <Hours />
         <Week />
         <Info />
