@@ -2,9 +2,9 @@ import './Hours.css';
 
 function Hours({items}) {
   let hours = items.slice(1, 10);
-  let firstHour = items.slice(0, 1);
-  console.log(Date.now());
+  let firstHour = items.slice(0, 1);  
 
+  
   return (
     <section className="hours">
       <div className="week-day">
@@ -32,7 +32,7 @@ function Hours({items}) {
         </li> )}
 
         {hours.map(item => <li key={item.dt} className="hours__item">
-          <p className="hours__time hours__time--active">{item.dt.toLocaleString()}</p>
+          <p className="hours__time hours__time--active">{`${new Date(item.dt*1000).getHours()} : 00`}</p>
           <svg className="hours__img" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.5 26.25C22.3325 26.25 26.25 22.3325 26.25 17.5C26.25 12.6675 22.3325 8.75 17.5 8.75C12.6675 8.75 8.75 12.6675 8.75 17.5C8.75 22.3325 12.6675 26.25 17.5 26.25Z" stroke="black" strokeWidth="2" strokeMiterlimit="10" />
             <path d="M17.5 5.46875V0" stroke="black" strokeWidth="2" strokeMiterlimit="10" />

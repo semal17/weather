@@ -84,7 +84,7 @@ function City({lat, lon}) {
           <CityCard items={items} />
           <Hours items={items.hourly} />
           <Week />
-          <Info />
+          <Info items={items} />
         </main>
         <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
       </>
