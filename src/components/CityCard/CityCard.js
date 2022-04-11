@@ -1,42 +1,9 @@
-import { useState, useEffect } from 'react';
-
-
-import Spinner from '../Spinner/Spinner';
 import './CityCard.css';
 
 
 
-function CityCard(props) {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-  
-  useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&exclude={part}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
-    .then(res => res.json())
-    .then(
-      (result) => {
-        setItems(result);
-        setIsLoaded(true);
-      },
-      (error) => {
-        setError(error);
-        setIsLoaded(true);
-      }
-    )
-}, [])
-
-if (error) {
-  return <section className="container">
-    <p>Ошибка.</p>
-  </section>;
-}
-else if (!isLoaded) {
-  return <section className="container">
-    <Spinner />
-  </section>;
-}
-else {
+function CityCard({items}) {
+ 
   console.log(items);
   return (
     <section className="personal-card">
@@ -53,6 +20,6 @@ else {
     </section>
   );
 }  
-}
+
 
 export default CityCard;

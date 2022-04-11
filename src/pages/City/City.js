@@ -1,7 +1,9 @@
 import './City.css';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
+import Spinner from '../../components/Spinner/Spinner';
 import Header from '../../components/Header/Header';
 import CityCard from '../../components/CityCard/CityCard';
 import Hours from '../../components/Hours/Hours';
@@ -13,7 +15,7 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 
 
 
-function City(props) {
+function City({lat, lon}) {
 
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,18 +45,53 @@ function City(props) {
     <p className="footer-city__text">Chandler, AZ</p>
   </div>;
 
-  return (
-    <>
-      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
-      <main className="container city-wrapper">
-        <CityCard lat={props.lat} lon={props.lon} />
-        <Hours />
-        <Week />
-        <Info />
-      </main>
-      <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
-    </>
-  );
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+
+  useEffect(() => {
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setItems(result);
+          setIsLoaded(true);
+        },
+        (error) => {
+          setError(error);
+          setIsLoaded(true);
+        }
+      )
+  }, [lat, lon])
+
+  if (error) {
+    return <section className="container">
+      <p>Ошибка.</p>
+    </section>;
+  }
+  else if (!isLoaded) {
+    return <section className="container">
+      <Spinner />
+    </section>;
+  }
+  else {
+
+    return (
+      <>
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
+        <main className="container city-wrapper">
+          <CityCard items={items} />
+          <Hours items={items.hourly} />
+          <Week />
+          <Info />
+        </main>
+        <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
+      </>
+    );
+  }
+
+
 }
 
 export default City;
