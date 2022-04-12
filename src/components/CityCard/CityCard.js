@@ -2,7 +2,7 @@ import './CityCard.css';
 
 
 
-function CityCard({items}) {
+function CityCard({items, country, city}) {
  
   console.log(items);
   return (
@@ -15,7 +15,7 @@ function CityCard({items}) {
          currently. It’s <span className="personal-card__today">{Math.round(items.current.temp)}&deg; </span> 
          and the high will be 
         <span className="personal-card__today"> {Math.round(items.current.temp)}&deg;</span>.</p>
-  <p className="personal-card__city">{items.timezone}</p>
+  <p className="personal-card__city">{city}, {country}</p>
       </div>
     </section>
   );

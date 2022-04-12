@@ -1,16 +1,15 @@
 import './Hours.css';
 
-function Hours({items}) {
+function Hours({items, temp}) {
   let hours = items.slice(1, 10);
   let firstHour = items.slice(0, 1);  
 
-  
   return (
     <section className="hours">
       <div className="week-day">
         <p className="week-day__name">Wednesday</p>
         <div className="week-day__temp">
-          <p className="week-day__temp--max">54&deg;</p>
+          <p className="week-day__temp--max">{Math.round(temp)}&deg;</p>
           <p className="week-day__temp--min">54&deg;</p>
         </div>
       </div>

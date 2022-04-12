@@ -11,7 +11,7 @@ import Search from '../../components/Search/Search';
 
 
 
-function Adds() {  
+function Adds({country, city}) {  
 
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@ function Adds() {
         </clipPath>
       </defs>
     </svg>
-    <p className="footer-city__text">Chandler, AZ</p>
+    <p className="footer-city__text">{city}, {country}</p>
   </div>;
 
   return (
