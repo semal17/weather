@@ -15,21 +15,21 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 
 
 
-function City({lat, lon, country, city}) {
+function City({ lat, lon, country, city }) {
 
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const hiddenOnMobile = 'footer  container footer--none';
+  const hiddenDay = 'header-day heder-day--none';
+  const styleText = 'header-logo__text header-logo__text--size';  
+  const timeClass = 'time-now';
+  const timeNow = <TimeNow displayNone={timeClass} />;
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
     </svg>
   </Link>;
 
-  const hiddenOnMobile = 'footer  container footer--none';
-  const hiddenDay = 'header-day heder-day--none';
-  const logoText = 'Wednesday, January 23';
-  const styleText = 'header-logo__text header-logo__text--size';
-  const headerTitle = 'Chandler';
-  const timeClass = 'time-now';
-  const timeNow = <TimeNow displayNone={timeClass} />;
   const addCity = <div className="footer-city">
     <svg className="footer-city__img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_9_175)">
@@ -76,14 +76,17 @@ function City({lat, lon, country, city}) {
     </section>;
   }
   else {
+    let time = new Date(items.current.dt * 1000);
+    let weekDay = days[time.getDay()];
+    let logoText = `${weekDay}, ${months[time.getMonth()]} ${time.getDate()}`;
 
     return (
       <>
-        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow} />
         <main className="container city-wrapper">
-          <CityCard items={items} country={country} city={city} />
-          <Hours items={items.hourly} temp={items.current.temp} />
-          <Week />
+          <CityCard items={items} country={country} city={city} day={items.daily[0]} />
+          <Hours items={items.hourly} day={items.daily[0]} weekDay={weekDay} />
+          <Week week={items.daily} />
           <Info items={items} />
         </main>
         <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />

@@ -16,7 +16,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: start;
+        justify-content: flex-start;
         width: 100%;
     }
 
@@ -29,7 +29,7 @@
         justify-content: space-between;
         align-items: center;
         width: 105px;
-        
+
         margin: 0 auto;
         height: 100%;
     }
@@ -47,13 +47,13 @@
         padding: 85px 9px 0;
     }
 
-    .card__adds {       
-        width: 175px;   
-        
+    .card__adds {
+        width: 175px;
+
     }
 
     .card__adds--text {
         font-size: 35px;
-line-height: 42px;
+        line-height: 42px;
     }
 }
