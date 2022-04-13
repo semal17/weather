@@ -2,7 +2,6 @@ import './City.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-
 import Spinner from '../../components/Spinner/Spinner';
 import Header from '../../components/Header/Header';
 import CityCard from '../../components/CityCard/CityCard';
@@ -11,8 +10,6 @@ import Week from '../../components/Week/Week';
 import Info from '../../components/Info/Info';
 import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
-
-
 
 
 function City({ lat, lon, country, city }) {

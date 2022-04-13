@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-
 import Header from '../../components/Header/Header';
 import Cards from '../../components/Cards/Cards';
 import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
+
 
 function Main(props) {
 

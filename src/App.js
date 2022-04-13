@@ -16,6 +16,7 @@ function App() {
   let [lon, setLon] = useState(37.6156);
   let [country, setCountry] = useState('RU');
   let [city, setCity] = useState('Moscow');
+  
   return (
     <BrowserRouter>
       <Routes>

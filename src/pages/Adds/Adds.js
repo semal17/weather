@@ -1,7 +1,6 @@
 import './Adds.css';
 import { Link } from 'react-router-dom';
 
-
 import Header from '../../components/Header/Header';
 import Result from '../../components/Result/Result';
 import Location from '../../components/Location/Location';
@@ -10,14 +9,7 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 import Search from '../../components/Search/Search';
 
 
-
 function Adds({country, city}) {  
-
-  const arrowHeader = <Link to="/" className="header__arrow">
-    <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
-    </svg>
-  </Link>;
 
   const hiddenOnMobile = 'footer container footer--none';
   const hiddenDay = 'header-day heder-day--none';
@@ -27,6 +19,11 @@ function Adds({country, city}) {
   const timeClass = 'time-now';
   const search = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
+    const arrowHeader = <Link to="/" className="header__arrow">
+    <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
+    </svg>
+  </Link>;
   const addCity = <div className="footer-city">
     <svg className="footer-city__img" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_9_175)">
