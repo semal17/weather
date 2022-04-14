@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import Spinner from '../Spinner/Spinner';
 
+
+
 function Cards(props) {
     const [arr, setArr] = useState([]);
     const [error, setError] = useState(null);
@@ -49,7 +51,7 @@ function Cards(props) {
                     {items.map(item => <Card key={item.city.id} weather={item} onPicking={ () => props.onPicking(item.city.coord.lat, item.city.coord.lon, item.city.country, item.city.name)} />)}
                     <li className="card card__add">
                         <Link to="/adds">
-                            <div className="card__adds">
+                            <div className="card__adds">                                
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="8" stroke="#0076FF" strokeWidth="2" />
                                     <path d="M8.96191 4.15384V13.77" stroke="#0076FF" strokeWidth="2" />

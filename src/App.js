@@ -16,11 +16,32 @@ function App() {
   let [lon, setLon] = useState(37.6156);
   let [country, setCountry] = useState('RU');
   let [city, setCity] = useState('Moscow');
+
+  let [latitude, setLatitude] = useState(51.514244);
+  let [longitude, setLongitude] = useState(7.468429);
+
+  let geoFindMe = () => {
+    let geoOk = (position) => {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+        console.log(latitude, longitude);
+    }
+
+    let geoError = () => {
+        console.log('error');
+    }
+    if (!navigator.geolocation) {
+        console.log(2);
+    } else {
+        navigator.geolocation.getCurrentPosition(geoOk, geoError);
+    }
+}
+geoFindMe();
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Main onPicking={ (lat, lon, country, city ) => {
+        <Route exact path="/" element={<Main latitude={latitude} longitude={longitude} onPicking={ (lat, lon, country, city ) => {
           setLat(lat);
           setLon(lon);
           setCountry(country);
