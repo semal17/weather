@@ -8,7 +8,6 @@ function Info({ items }) {
   let sunsetHour = new Date(items.current.sunset * 1000).getHours();
   let sunsetMinutes = new Date(items.current.sunset * 1000).getMinutes();
 
-
   return (
     <section className="info">
       <h2 className="info__title">More Info</h2>
@@ -105,22 +104,8 @@ function Info({ items }) {
 
         <li className="info__item">
           <p className="info__text">Feels Like</p>
-          <svg className="info__img" width="41" height="37" viewBox="0 0 41 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_2_1223)">
-              <path d="M35.5843 28.7939C38.2445 28.7939 40.0286 27.2133 40.0286 24.8564C40.0286 22.5001 38.2445 19.7939 35.5843 19.7939C35.5843 13.9018 29.5368 9.66895 22.8863 9.66895C17.0001 9.66895 11.872 13.1626 10.8231 18.1064C10.8231 18.1064 10.0403 18.1064 9.55334 18.1064C6.22773 18.1064 3.83923 20.7851 3.83923 23.7314C3.83923 26.6778 6.22773 28.7939 9.55334 28.7939H35.5843Z" stroke="black" strokeWidth="1.6" strokeMiterlimit="10" />
-              <path d="M19.0762 10.0919C17.6756 9.1222 15.9131 8.54395 13.9976 8.54395C9.43902 8.54395 5.7439 11.8177 5.7439 15.8564C5.7439 17.306 6.19277 18.0946 7.0137 19.2314" stroke="black" strokeWidth="1.6" strokeMiterlimit="10" />
-              <path d="M3.83919 15.8564H0.0297852" stroke="black" strokeWidth="1.6" strokeMiterlimit="10" />
-              <path d="M13.9976 6.85645V3.48145" stroke="black" strokeWidth="1.6" strokeMiterlimit="10" />
-              <path d="M6.37874 9.10645L2.56934 5.73145" stroke="black" strokeWidth="1.6" strokeMiterlimit="10" />
-            </g>
-            <defs>
-              <clipPath id="clip0_2_1223">
-                <rect width="40.6337" height="36" fill="white" transform="translate(0.0297852 0.668945)" />
-              </clipPath>
-            </defs>
-          </svg>
-
-          <p className="info__caption">{Math.round(items.current.feels_like)}&deg;</p>
+          <img className="info__img" width="41" height="37" src={require(`../../images/icons/${items.daily[0].weather[0].icon}.svg`)} alt='weather icon' /> 
+                    <p className="info__caption">{Math.round(items.current.feels_like)}&deg;</p>
         </li>
 
 

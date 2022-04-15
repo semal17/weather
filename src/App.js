@@ -23,8 +23,7 @@ function App() {
   let geoFindMe = () => {
     let geoOk = (position) => {
       setLatitude(position.coords.latitude);
-      setLongitude(position.coords.longitude);
-        console.log(latitude, longitude);
+      setLongitude(position.coords.longitude);        
     }
 
     let geoError = () => {

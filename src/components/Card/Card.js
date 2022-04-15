@@ -1,24 +1,50 @@
-import './Card.css';
-import Time from '../Time/Time';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Card(props) {    
-    return (                      
-                <li className="card" onClick={props.onPicking}>
-                    <Link to="/city">
-                        <div className="card__container">
-                            <div className="card__wrapper">
-                                <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
-                                <Time time={props.weather.list[0]}  />
-                            </div>
-                            <div className="card__temp">
-                                <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
-                            </div>
-                            <p className="card__location">{props.weather.city.name}</p>
+import './Card.css';
+import Time from '../Time/Time';
+
+
+function Card(props) {  
+    let locSt = localStorage.getItem('temp');
+    
+    if( locSt === 'C') {        
+        return (                      
+            <li className="card" onClick={props.onPicking}>
+                <Link to="/city">
+                    <div className="card__container">
+                        <div className="card__wrapper">
+                            <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
+                            <Time time={props.weather.list[0]}  />
                         </div>
-                    </Link>
-                </li>                              
-    );
+                        <div className="card__temp">
+                            <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
+                        </div>
+                        <p className="card__location">{props.weather.city.name}</p>
+                    </div>
+                </Link>
+            </li>                              
+);
+    }
+    else {        
+        return (                      
+            <li className="card" onClick={props.onPicking}>
+                <Link to="/city">
+                    <div className="card__container">
+                        <div className="card__wrapper">
+                            <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
+                            <Time time={props.weather.list[0]}  />
+                        </div>
+                        <div className="card__temp">
+                            <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
+                        </div>
+                        <p className="card__location">hallo</p>
+                    </div>
+                </Link>
+            </li>                              
+);
+    } 
+    
 }
 
 export default Card;
