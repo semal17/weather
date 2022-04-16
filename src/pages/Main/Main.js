@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import Header from '../../components/Header/Header';
 import Cards from '../../components/Cards/Cards';
@@ -23,10 +24,11 @@ function Main(props) {
   </svg>
 </Link>;
 
+
   return (
     <>
       <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds}/>
-      <Cards langtitude={props.langtitude} longitude={props.longitude} onPicking={ (lat, lon, country, city) => props.onPicking(lat, lon, country, city)}/>
+      <Cards  langtitude={props.langtitude} longitude={props.longitude} onPicking={ (lat, lon, country, city) => props.onPicking(lat, lon, country, city)}/>
       <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} />
     </>
   );

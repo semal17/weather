@@ -5,17 +5,23 @@ import './Card.css';
 import Time from '../Time/Time';
 
 
-function Card(props) {  
-    let locSt = localStorage.getItem('temp');
+function Card(props) {
+
+    let [locSt, setLocSt] = useState('C');
+    let temp = localStorage.getItem('temp');
     
-    if( locSt === 'C') {        
-        return (                      
+    useEffect(() => {
+        setLocSt(localStorage.getItem('temp'));
+    }, [temp]);
+    
+    if (locSt === 'C') {
+        return (
             <li className="card" onClick={props.onPicking}>
                 <Link to="/city">
                     <div className="card__container">
                         <div className="card__wrapper">
                             <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
-                            <Time time={props.weather.list[0]}  />
+                            <Time time={props.weather.list[0]} />
                         </div>
                         <div className="card__temp">
                             <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
@@ -23,17 +29,17 @@ function Card(props) {
                         <p className="card__location">{props.weather.city.name}</p>
                     </div>
                 </Link>
-            </li>                              
-);
+            </li>
+        );
     }
-    else {        
-        return (                      
+    else {
+        return (
             <li className="card" onClick={props.onPicking}>
                 <Link to="/city">
                     <div className="card__container">
                         <div className="card__wrapper">
                             <p className="card__weather">{props.weather.list[0].weather[0].main}</p>
-                            <Time time={props.weather.list[0]}  />
+                            <Time time={props.weather.list[0]} />
                         </div>
                         <div className="card__temp">
                             <p className="card__num">{Math.round(props.weather.list[0].main.temp)}&deg;</p>
@@ -41,10 +47,10 @@ function Card(props) {
                         <p className="card__location">hallo</p>
                     </div>
                 </Link>
-            </li>                              
-);
-    } 
-    
+            </li>
+        );
+    }
+
 }
 
 export default Card;
