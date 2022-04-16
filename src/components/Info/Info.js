@@ -1,12 +1,26 @@
 import './Info.css';
 
-function Info({ items }) {
+function Info({ items, unit }) {
 
   let sunriseHour = new Date(items.current.sunrise * 1000).getHours();
   let sunriseMinutes = new Date(items.current.sunrise * 1000).getMinutes();
 
   let sunsetHour = new Date(items.current.sunset * 1000).getHours();
   let sunsetMinutes = new Date(items.current.sunset * 1000).getMinutes();
+
+
+  function convertToF(celsius) {
+    return Math.round(celsius * 9 / 5 + 32);
+  }
+
+  function handleTemperature(temp) {
+    if (unit === 'C') {
+      return temp;
+    } else {
+      return convertToF(temp);
+    }
+  }
+
 
   return (
     <section className="info">
@@ -104,43 +118,41 @@ function Info({ items }) {
 
         <li className="info__item">
           <p className="info__text">Feels Like</p>
-          <img className="info__img" width="41" height="37" src={require(`../../images/icons/${items.daily[0].weather[0].icon}.svg`)} alt='weather icon' /> 
-                    <p className="info__caption">{Math.round(items.current.feels_like)}&deg;</p>
+          <img className="info__img" width="41" height="37" src={require(`../../images/icons/${items.daily[0].weather[0].icon}.svg`)} alt='weather icon' />
+          <p className="info__caption">{handleTemperature(Math.round(items.current.feels_like))}&deg;</p>
         </li>
 
 
         <li className="info__item">
-          <p className="info__text">Visibility</p>          
+          <p className="info__text">Visibility</p>
           <p className="info__caption">{items.current.visibility} m</p>
         </li>
 
         <li className="info__item">
-          <p className="info__text">Pressure</p>          
+          <p className="info__text">Pressure</p>
           <p className="info__caption">{((items.current.pressure * 100) / 3386).toFixed(2)} inHg</p>
         </li>
 
         <li className="info__item">
-          <p className="info__text">UV Index</p>          
+          <p className="info__text">UV Index</p>
           <p className="info__caption">{items.current.uvi}</p>
         </li>
 
         <li className="info__item">
-          <p className="info__text">Clouds</p>          
+          <p className="info__text">Clouds</p>
           <p className="info__caption">{items.current.clouds}%</p>
         </li>
 
-        
+
         <li className="info__item">
-          <p className="info__text">Dew Point</p>          
-          <p className="info__caption">{Math.round(items.current.dew_point)}&deg;</p>
+          <p className="info__text">Dew Point</p>
+          <p className="info__caption">{handleTemperature(Math.round(items.current.dew_point))}&deg;</p>
         </li>
 
         <li className="info__item">
-          <p className="info__text">Wind Gust</p>          
+          <p className="info__text">Wind Gust</p>
           <p className="info__caption">{items.current.wind_gust} met/sec</p>
         </li>
-
-
 
       </ul>
     </section>

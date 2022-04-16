@@ -17,19 +17,42 @@ function App() {
   let [country, setCountry] = useState('RU');
   let [city, setCity] = useState('Moscow');
   let [unit, setUnit] = useState('C');
-
-  let latitude= 1;
-  let longitude=2;
-
-  useEffect(() => {
-    const initialUnit = localStorage.getItem("unit");
-    setUnit(initialUnit)
-  }, []);
+  let [latitude, setLatitude] = useState(51.514244);
+  let [longitude, setLongitude] = useState(7.468429);
 
   useEffect(() => {
+    let geoOk = (position) => {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+    }
+
+    let geoError = () => {
+      console.log('error');
+    }
+
+    if (!navigator.geolocation) {
+      console.log(2);
+    } else {
+      navigator.geolocation.getCurrentPosition(geoOk, geoError);
+    }
+
+    localStorage.setItem('latitude', latitude);
+    localStorage.setItem('longitude', longitude);
     localStorage.setItem("unit", unit);
-  }, [unit]);
+    
+    const initialUnit = localStorage.getItem("unit");
+    setUnit(initialUnit);
 
+  }, [latitude, longitude, unit]);
+
+  // useEffect(() => {  //
+  //   const initialUnit = localStorage.getItem("unit");
+  //   setUnit(initialUnit);
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("unit", unit);
+  // }, [unit]);
 
   return (
     <BrowserRouter>
@@ -40,15 +63,15 @@ function App() {
             longitude={longitude}
             unit={unit}
             setUnit={setUnit}
-            onPicking={ (lat, lon, country, city ) => {
-          setLat(lat);
-          setLon(lon);
-          setCountry(country);
-          setCity(city);
-        }
-        }/>
+            onPicking={(lat, lon, country, city) => {
+              setLat(lat);
+              setLon(lon);
+              setCountry(country);
+              setCity(city);
+            }
+            } />
         } />
-        <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} />} />
+        <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit} />} />
         <Route path="adds" element={<Adds country={country} city={city} />} />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -5,17 +5,17 @@ import Time from '../Time/Time';
 
 
 function Card(props) {
-  const unit = props.unit
+  const unit = props.unit;
 
   function convertToF(celsius) {
-    return celsius * 9/5 + 32
+    return Math.round(celsius * 9/5 + 32);
   }
 
   function handleTemperature (temp) {
     if (unit === 'C') {
-      return temp
+      return temp;
     } else {
-      return  convertToF(temp)
+      return  convertToF(temp);
     }
   }
 
@@ -30,7 +30,7 @@ function Card(props) {
           <div className="card__temp">
             <p className="card__num">{handleTemperature(Math.round(props.weather.list[0].main.temp))}&deg;</p>
           </div>
-          <p className="card__location">hallo</p>
+          <p className="card__location">{props.weather.city.name}</p>
         </div>
       </Link>
     </li>

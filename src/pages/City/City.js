@@ -12,13 +12,13 @@ import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
 
 
-function City({ lat, lon, country, city }) {
+function City({ lat, lon, country, city, unit, setUnit }) {
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const hiddenOnMobile = 'footer  container footer--none';
   const hiddenDay = 'header-day heder-day--none';
-  const styleText = 'header-logo__text header-logo__text--size';  
+  const styleText = 'header-logo__text header-logo__text--size';
   const timeClass = 'time-now';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const arrowHeader = <Link to="/" className="header__arrow">
@@ -81,12 +81,12 @@ function City({ lat, lon, country, city }) {
       <>
         <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow} />
         <main className="container city-wrapper">
-          <CityCard items={items} country={country} city={city} day={items.daily[0]} />
-          <Hours items={items.hourly} day={items.daily[0]} weekDay={weekDay} />
-          <Week week={items.daily} />
-          <Info items={items} />
+          <CityCard items={items} country={country} city={city} day={items.daily[0]} unit={unit} />
+          <Hours items={items.hourly} day={items.daily[0]} weekDay={weekDay} unit={unit} />
+          <Week week={items.daily} unit={unit} />
+          <Info items={items} unit={unit} />
         </main>
-        <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
+        <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} setUnit={setUnit} unit={unit} />
       </>
     );
   }

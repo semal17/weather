@@ -2,6 +2,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 
 function Footer(props) {
+
     let checkboxClick = () => {
         if(props.unit === 'C') {
             props.setUnit('F')
@@ -10,7 +11,6 @@ function Footer(props) {
           props.setUnit('C')
         }
     }
-
 
     return (
         <footer className={props.isHiddenOnMobile}>
