@@ -12,7 +12,7 @@ function Main(props) {
   const hiddenOnMobile = 'footer  container';
   const hiddenDay = "header-day";
   const logoText = 'Weather';
-  const styleText = 'header-logo__text'; 
+  const styleText = 'header-logo__text';
   const headerTitle = 'Today';
   const timeClass = 'time-now time--none';
   const timeNow = <TimeNow displayNone={timeClass}/>;
@@ -28,8 +28,8 @@ function Main(props) {
   return (
     <>
       <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds}/>
-      <Cards  langtitude={props.langtitude} longitude={props.longitude} onPicking={ (lat, lon, country, city) => props.onPicking(lat, lon, country, city)}/>
-      <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} />
+      <Cards  langtitude={props.langtitude} longitude={props.longitude} onPicking={ (lat, lon, country, city) => props.onPicking(lat, lon, country, city)} unit={props.unit}/>
+      <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} setUnit={props.setUnit} unit={props.unit} />
     </>
   );
 }

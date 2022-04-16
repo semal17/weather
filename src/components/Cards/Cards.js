@@ -74,7 +74,7 @@ function Cards(props) {
         return (
             <section className="cards container">
                 <ul className="cards__wrapper" onMouseEnter={geoFindMe}>
-                    {items.map((item, index) => <Card  key={item.city.id + index} weather={item} onPicking={() => props.onPicking(item.city.coord.lat, item.city.coord.lon, item.city.country, item.city.name)} />)}
+                    {items.map((item, index) => <Card  key={item.city.id + index} unit={props.unit} weather={item} onPicking={() => props.onPicking(item.city.coord.lat, item.city.coord.lon, item.city.country, item.city.name)} />)}
                     <li className="card card__add">
                         <Link to="/adds">
                             <div className="card__adds">

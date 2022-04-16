@@ -1,31 +1,28 @@
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
-
-
-
-function Footer(props) { 
-    let checkboxClick = (e) => {
-        if(e.target.checked === true) {
-            localStorage.setItem('temp', 'C');
+function Footer(props) {
+    let checkboxClick = () => {
+        if(props.unit === 'C') {
+            props.setUnit('F')
         }
         else {
-            localStorage.setItem('temp', 'F');
+          props.setUnit('C')
         }
     }
 
-    
+
     return (
         <footer className={props.isHiddenOnMobile}>
             <div className="footer__line"></div>
             <div className="footer__wrapper">
                 <Link className="footer__link" to="/adds">+ Add City</Link>
-                <label className="checkbox" onClick={checkboxClick}>
-                    <input type="checkbox" defaultChecked />
+                <label className="checkbox">
+                    <input type="checkbox" checked={props.unit === 'C'} onChange={checkboxClick}/>
                     <span className="checkbox-switch" data-label-on="&deg;C" data-label-off="&deg;F"></span>
-                </label>  
+                </label>
                 {props.city}
-                {props.time}                          
+                {props.time}
             </div>
             <p className="footer__copyright">Powered by The Weather Channel</p>
         </footer>
