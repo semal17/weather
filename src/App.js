@@ -17,8 +17,8 @@ function App() {
   let [country, setCountry] = useState('RU');
   let [city, setCity] = useState('Moscow');
   let [unit, setUnit] = useState('C');
-  let [latitude, setLatitude] = useState(51.514244);
-  let [longitude, setLongitude] = useState(7.468429);
+  let [latitude, setLatitude] = useState(55.7522);
+  let [longitude, setLongitude] = useState(37.6156);
 
   useEffect(() => {
     let geoOk = (position) => {
@@ -39,20 +39,12 @@ function App() {
     localStorage.setItem('latitude', latitude);
     localStorage.setItem('longitude', longitude);
     localStorage.setItem("unit", unit);
-    
+
     const initialUnit = localStorage.getItem("unit");
     setUnit(initialUnit);
 
   }, [latitude, longitude, unit]);
 
-  // useEffect(() => {  //
-  //   const initialUnit = localStorage.getItem("unit");
-  //   setUnit(initialUnit);
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("unit", unit);
-  // }, [unit]);
 
   return (
     <BrowserRouter>
@@ -72,7 +64,7 @@ function App() {
             } />
         } />
         <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit} />} />
-        <Route path="adds" element={<Adds country={country} city={city} />} />
+        <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit} />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

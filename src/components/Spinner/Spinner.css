@@ -4,7 +4,7 @@
   50% { transform: rotate(180deg) }
   100% { transform: rotate(360deg) }
 }
-.spinner__intro div {  
+.spinner__intro div {
   position: absolute;
   animation: spinner__intro 1.09s linear infinite;
   width: 162px;
@@ -29,6 +29,6 @@
   position: relative;
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
-  transform-origin: 0 0; 
+  transform-origin: 0 0;
 }
 .spinner__intro div { box-sizing: content-box; }

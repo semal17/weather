@@ -1,5 +1,6 @@
 import './Adds.css';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import Header from '../../components/Header/Header';
 import Result from '../../components/Result/Result';
@@ -7,9 +8,15 @@ import Location from '../../components/Location/Location';
 import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
 import Search from '../../components/Search/Search';
+import Spinner from '../../components/Spinner/Spinner';
 
+function Adds({ latitude, longitude, unit, setUnit }) {
 
-function Adds({country, city}) {  
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+  let [city, setCity] = useState('Moscow');
+  let [country, setCountry] = useState('RU');
 
   const hiddenOnMobile = 'footer container footer--none';
   const hiddenDay = 'header-day heder-day--none';
@@ -19,7 +26,7 @@ function Adds({country, city}) {
   const timeClass = 'time-now';
   const search = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
-    const arrowHeader = <Link to="/" className="header__arrow">
+  const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M15 2L3 14L15 26" stroke="#0076FF" strokeWidth="3" />
     </svg>
@@ -39,17 +46,51 @@ function Adds({country, city}) {
     <p className="footer-city__text">{city}, {country}</p>
   </div>;
 
-  return (
-    <>
-      <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
-      <main className="container">
-      <Search classSearch={search}/>
-      <Result />
-      <Location />
-      </main>
-      <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} />
-    </>
-  );
+
+  useEffect(() => {
+    Promise.all([fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude - 2}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude - 2}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=Moscow&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=Saint%20Petersburg&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)])
+      .then(res => Promise.all(res.map(r => r.json())))
+      .then(
+        (result) => {
+          setItems(result);
+          setIsLoaded(true);
+          setCity(result[4].city.name);
+          setCountry(result[4].city.country);
+        },
+        (error) => {
+          setError(error);
+          setIsLoaded(true);
+        }
+      )
+  }, [latitude, longitude])
+
+  if (error) {
+    return <section className="cards container">
+      <p>Ошибка.</p>
+    </section>;
+  }
+  else if (!isLoaded) {
+    return <section className="cards container">
+      <Spinner />
+    </section>;
+  }
+  else {
+    return (
+      <>
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
+        <main className="container">
+          <Search classSearch={search} />
+          <Result />
+          <Location items={items} unit={unit} />
+        </main>
+        <Footer isHiddenOnMobile={hiddenOnMobile} city={addCity} time={timeNow} setUnit={setUnit} unit={unit} />
+      </>
+    );
+  }
 }
 
 export default Adds;
