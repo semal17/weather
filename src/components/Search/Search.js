@@ -4,16 +4,24 @@ import './Search.css';
 
 
 
-function Search(props) {
+function Search({ classSearch, search, setSearch }) {
 
-    let input = useRef();
-    let changeSearch = () => {
-        console.log(input.current.value);
-    }   
+  let input = useRef();
+  // let changeSearch = () => {
+  //   console.log(input.current.value);
+  // }
 
-    return (
-        <input className={props.classSearch} onInput={changeSearch} ref={input} type="search" placeholder="Search City"></input>
-    );
+  let searchCity = (e) => {
+    if (e.key === 'Enter') {
+      setSearch(input.current.value);
+    }
+  }
+
+  console.log(search);
+
+  return (
+    <input className={classSearch}  onKeyDown={searchCity} ref={input} type="search" placeholder="Search City"></input>
+  );
 }
 
 export default Search;

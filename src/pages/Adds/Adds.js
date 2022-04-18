@@ -10,7 +10,7 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 import Search from '../../components/Search/Search';
 import Spinner from '../../components/Spinner/Spinner';
 
-function Adds({ latitude, longitude, unit, setUnit }) {
+function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,7 +24,7 @@ function Adds({ latitude, longitude, unit, setUnit }) {
   const styleText = 'header-logo__text header-logo__text--size';
   const headerTitle = 'Add City';
   const timeClass = 'time-now';
-  const search = 'search search--mobile';
+  const searching = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const arrowHeader = <Link to="/" className="header__arrow">
     <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@ function Adds({ latitude, longitude, unit, setUnit }) {
       <>
         <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
         <main className="container">
-          <Search classSearch={search} />
+          <Search classSearch={searching} search={search} setSearch={setSearch} />
           <Result />
           <Location items={items} unit={unit} />
         </main>

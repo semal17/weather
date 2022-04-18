@@ -19,6 +19,7 @@ function App() {
   let [unit, setUnit] = useState('C');
   let [latitude, setLatitude] = useState(55.7522);
   let [longitude, setLongitude] = useState(37.6156);
+  let [search, setSearch] = useState('');
 
   useEffect(() => {
     let geoOk = (position) => {
@@ -42,6 +43,7 @@ function App() {
 
     const initialUnit = localStorage.getItem("unit");
     setUnit(initialUnit);
+    setSearch('moscow');
 
   }, [latitude, longitude, unit]);
 
@@ -55,6 +57,7 @@ function App() {
             longitude={longitude}
             unit={unit}
             setUnit={setUnit}
+
             onPicking={(lat, lon, country, city) => {
               setLat(lat);
               setLon(lon);
@@ -64,7 +67,8 @@ function App() {
             } />
         } />
         <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit} />} />
-        <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit} />} />
+        <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit} search={search}
+            setSearch={setSearch} />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
