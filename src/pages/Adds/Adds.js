@@ -67,7 +67,7 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
         }
       )
   }, [latitude, longitude])
-
+  
   if (error) {
     return <section className="cards container">
       <p>Ошибка.</p>
