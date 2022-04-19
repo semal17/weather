@@ -12,7 +12,7 @@ import Footer from '../../components/Footer/Footer';
 import TimeNow from '../../components/TimeNow/TimeNow';
 
 
-function City({ lat, lon, country, city, unit, setUnit }) {
+function City({ lat, lon, country, city, unit, setUnit, search, setSearch }) {
 
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -79,7 +79,7 @@ function City({ lat, lon, country, city, unit, setUnit }) {
 
     return (
       <>
-        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow} />
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow} search={search} setSearch={setSearch} />
         <main className="container city-wrapper">
           <CityCard items={items} country={country} city={city} day={items.daily[0]} unit={unit} />
           <Hours items={items.hourly} day={items.daily[0]} weekDay={weekDay} unit={unit} />

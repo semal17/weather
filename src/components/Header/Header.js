@@ -18,7 +18,7 @@ function Header(props) {
                     <img className="header-logo__img" src={logo} alt="" />
                     <p className={props.styles}>{props.text}</p>
                 </div>
-                <Search classSearch={search} />
+                <Search classSearch={search} search={props.search} setSearch={props.setSearch} />
             </div>
             <div className={props.isHiddenDay}>
                 <div className="header-day__text-wrapper">

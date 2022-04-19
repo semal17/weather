@@ -12,6 +12,7 @@ import Spinner from '../../components/Spinner/Spinner';
 
 function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
 
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -67,7 +68,7 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
         }
       )
   }, [latitude, longitude])
-  
+
   if (error) {
     return <section className="cards container">
       <p>Ошибка.</p>
@@ -81,9 +82,8 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
   else {
     return (
       <>
-        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} />
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow} search={search} setSearch={setSearch} />
         <main className="container">
-          <Search classSearch={searching} search={search} setSearch={setSearch} />
           <Result />
           <Location items={items} unit={unit} />
         </main>

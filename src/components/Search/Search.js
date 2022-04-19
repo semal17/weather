@@ -17,8 +17,6 @@ function Search({ classSearch, search, setSearch }) {
     }
   }
 
-  console.log(search);
-
   return (
     <input className={classSearch}  onKeyDown={searchCity} ref={input} type="search" placeholder="Search City"></input>
   );
