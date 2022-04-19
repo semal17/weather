@@ -8,7 +8,6 @@ import Search from '../Search/Search';
 function Header(props) {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let weekDay = new Date().getDay();
-    const search = 'search';
 
     return (
         <header className="header container">
@@ -18,7 +17,7 @@ function Header(props) {
                     <img className="header-logo__img" src={logo} alt="" />
                     <p className={props.styles}>{props.text}</p>
                 </div>
-                <Search classSearch={search} search={props.search} setSearch={props.setSearch} />
+                <Search classSearch={props.searching} search={props.search} setSearch={props.setSearch} />
             </div>
             <div className={props.isHiddenDay}>
                 <div className="header-day__text-wrapper">

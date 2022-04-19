@@ -19,6 +19,7 @@ function City({ lat, lon, country, city, unit, setUnit, search, setSearch }) {
   const hiddenOnMobile = 'footer  container footer--none';
   const hiddenDay = 'header-day heder-day--none';
   const styleText = 'header-logo__text header-logo__text--size';
+  const searching = 'search';
   const timeClass = 'time-now';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const arrowHeader = <Link to="/" className="header__arrow">
@@ -79,7 +80,8 @@ function City({ lat, lon, country, city, unit, setUnit, search, setSearch }) {
 
     return (
       <>
-        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow} search={search} setSearch={setSearch} />
+        <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={city} adds={timeNow}
+         searching={searching} search={search} setSearch={setSearch} />
         <main className="container city-wrapper">
           <CityCard items={items} country={country} city={city} day={items.daily[0]} unit={unit} />
           <Hours items={items.hourly} day={items.daily[0]} weekDay={weekDay} unit={unit} />

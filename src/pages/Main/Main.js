@@ -13,6 +13,7 @@ function Main(props) {
   const logoText = 'Weather';
   const styleText = 'header-logo__text';
   const headerTitle = 'Today';
+  const searching = 'search';
   const timeClass = 'time-now time--none';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const headerAdds = <Link to="/adds" className="header-day__link">
@@ -26,7 +27,8 @@ function Main(props) {
 
   return (
     <>
-      <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds} search={props.search} setSearch={props.setSearch} />
+      <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds}
+      searching={searching} search={props.search} setSearch={props.setSearch} />
       <Cards onPicking={(lat, lon, country, city) => props.onPicking(lat, lon, country, city)}
         unit={props.unit} latitude={props.latitude} longitude={props.longitude} />
       <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} setUnit={props.setUnit} unit={props.unit} />

@@ -69,10 +69,10 @@ function App() {
             }
             } />
         } />
-        <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit} search={search}
-                                          setSearch={setSearch} />} />
-        <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit} search={search}
-            setSearch={setSearch} />} />
+        <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit}
+         search={search}  setSearch={setSearch} />} />
+        <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit}
+        search={search}  setSearch={setSearch} />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
