@@ -25,7 +25,6 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
   const styleText = 'header-logo__text header-logo__text--size';
   const headerTitle = 'Add City';
   const timeClass = 'time-now';
-  const searching = 'search';
   const searchAdd = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
   const arrowHeader = <Link to="/" className="header__arrow">
@@ -84,9 +83,9 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
     return (
       <>
         <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow}
-         searching={searching} search={search} setSearch={setSearch} />
+          search={search} setSearch={setSearch} />
         <main className="container">
-        <Search classSearch={searchAdd} search={search} setSearch={setSearch} />
+          <Search classSearch={searchAdd} search={search} setSearch={setSearch} />
           <Result />
           <Location items={items} unit={unit} />
         </main>
