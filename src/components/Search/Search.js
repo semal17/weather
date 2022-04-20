@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { debounce } from "lodash";
 
 import './Search.css';
 
@@ -7,20 +8,16 @@ import './Search.css';
 function Search({ classSearch, search, setSearch }) {
 
   let input = useRef();
-  // let changeSearch = () => {
-  //   console.log(input.current.value);
-  // }
 
-  let searchCity = (e) => {
-    if (e.key === 'Enter') {
-      setSearch(input.current.value);
-    }
-  }
 
+  let searchCity = debounce(() => {
+    setSearch(input.current.value);
+  }, 1500);
 
   console.log(search);
+
   return (
-    <input className={classSearch} onKeyDown={searchCity} ref={input} type="search" placeholder="Search City"></input>
+    <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
   );
 }
 

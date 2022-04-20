@@ -43,8 +43,6 @@ function App() {
 
     const initialUnit = localStorage.getItem("unit");
     setUnit(initialUnit);
-    setSearch('moscow');
-
   }, [latitude, longitude, unit]);
 
 
