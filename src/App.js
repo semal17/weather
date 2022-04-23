@@ -58,6 +58,10 @@ function App() {
             setUnit={setUnit}
             search={search}
             setSearch={setSearch}
+            setLat={setLat}
+            setLon={setLon}
+            setCountry={setCountry}
+            setCity={setCity}
 
             onPicking={(lat, lon, country, city) => {
               setLat(lat);
@@ -67,10 +71,10 @@ function App() {
             }
             } />
         } />
-        <Route path="city" element={<City lat={lat} lon={lon} country={country} city={city} unit={unit} setUnit={setUnit}
-          search={search} setSearch={setSearch} />} />
+        <Route path="city" element={<City lat={lat} lon={lon} setLat={setLat} setLon={setLon} country={country} city={city}
+        unit={unit} setUnit={setUnit} search={search} setSearch={setSearch} setCountry={setCountry} setCity={setCity} />} />
         <Route path="adds" element={<Adds latitude={latitude} longitude={longitude} unit={unit} setUnit={setUnit}
-          search={search} setSearch={setSearch} />} />
+          search={search} setSearch={setSearch} setLat={setLat} setLon={setLon} setCountry={setCountry} setCity={setCity}  />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

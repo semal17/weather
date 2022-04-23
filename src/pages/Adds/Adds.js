@@ -10,14 +10,14 @@ import TimeNow from '../../components/TimeNow/TimeNow';
 import Spinner from '../../components/Spinner/Spinner';
 import Search from '../../components/Search/Search';
 
-function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
+function Adds({ latitude, longitude, unit, setUnit, search, setSearch, setLat, setLon, setCountry, setCity }) {
 
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  let [city, setCity] = useState('Moscow');
-  let [country, setCountry] = useState('RU');
+  let [cityAdds, setCityAdds] = useState('Moscow');
+  let [countryAdds, setCountryAdds] = useState('RU');
 
   const hiddenOnMobile = 'footer container footer--none';
   const hiddenDay = 'header-day heder-day--none';
@@ -44,7 +44,7 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
         </clipPath>
       </defs>
     </svg>
-    <p className="footer-city__text">{city}, {country}</p>
+    <p className="footer-city__text">{cityAdds}, {countryAdds}</p>
   </div>;
 
 
@@ -59,8 +59,8 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
         (result) => {
           setItems(result);
           setIsLoaded(true);
-          setCity(result[4].city.name);
-          setCountry(result[4].city.country);
+          setCityAdds(result[4].city.name);
+          setCountryAdds(result[4].city.country);
         },
         (error) => {
           setError(error);
@@ -83,9 +83,9 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch }) {
     return (
       <>
         <Header arrow={arrowHeader} isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={timeNow}
-          search={search} setSearch={setSearch} />
+          search={search} setSearch={setSearch} setLat={setLat} setLon={setLon} setCountry={setCountry} setCity={setCity} />
         <main className="container">
-          <Search classSearch={searchAdd} search={search} setSearch={setSearch} />
+          <Search classSearch={searchAdd} search={search} setSearch={setSearch} setLat={setLat} setLon={setLon} setCountry={setCountry} setCity={setCity} />
           <Result />
           <Location items={items} unit={unit} />
         </main>

@@ -27,7 +27,7 @@ function Main(props) {
   return (
     <>
       <Header isHiddenDay={hiddenDay} text={logoText} styles={styleText} headerText={headerTitle} adds={headerAdds}
-        search={props.search} setSearch={props.setSearch} />
+        search={props.search} setSearch={props.setSearch} setLat={props.setLat} setLon={props.setLon} setCountry={props.setCountry} setCity={props.setCity} />
       <Cards onPicking={(lat, lon, country, city) => props.onPicking(lat, lon, country, city)}
         unit={props.unit} latitude={props.latitude} longitude={props.longitude} />
       <Footer isHiddenOnMobile={hiddenOnMobile} time={timeNow} setUnit={props.setUnit} unit={props.unit} />
