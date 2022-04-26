@@ -12,14 +12,11 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
   let input = useRef();
   const navigate = useNavigate();
 
-
   let searchCity = debounce(() => {
     setSearch(input.current.value);
   }, 1500);
 
-
   const [items, setItems] = useState([]);
-
 
   useEffect(() => {
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
@@ -27,7 +24,6 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
       .then(
         (result) => {
           setItems(result);
-          // navigate('/city')
         })
   }, [search]);
 
@@ -36,20 +32,19 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
       <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
     );
   }
+  
   else {
     setLat(items.city.coord.lat);
     setLon(items.city.coord.lon);
     setCountry(items.city.country);
     setCity(items.city.name);
-     
+
+    // navigate('/city')
+
     return (
       <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
     );
   }
-
-
-
-
 }
 
 export default Search;
