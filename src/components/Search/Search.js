@@ -14,7 +14,7 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
 
   let searchCity = debounce(() => {
     setSearch(input.current.value);
-  }, 1500);
+  }, 1000);
 
   const [items, setItems] = useState([]);
 
@@ -25,6 +25,7 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
         (result) => {
           setItems(result);
         })
+        return () => setSearch('');
   }, [search]);
 
   if (items.cod !== '200') {
@@ -32,14 +33,14 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
       <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
     );
   }
-  
+
   else {
     setLat(items.city.coord.lat);
     setLon(items.city.coord.lon);
     setCountry(items.city.country);
     setCity(items.city.name);
+// navigate('/city');
 
-    // navigate('/city')
 
     return (
       <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>

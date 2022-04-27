@@ -16,7 +16,7 @@ function Footer(props) {
     <footer className={props.isHiddenOnMobile}>
       <div className="footer__line"></div>
       <div className="footer__wrapper">
-        <Link className="footer__link" to="/adds">+ Add City</Link>
+        <Link className="footer__link" to="/adds">Search City</Link>
         <label className="checkbox">
           <input type="checkbox" checked={props.unit === 'C'} onChange={checkboxClick} />
           <span className="checkbox-switch" data-label-on="&deg;C" data-label-off="&deg;F"></span>
