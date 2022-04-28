@@ -35,10 +35,12 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
   }
 
   else {
+    
     setLat(items.city.coord.lat);
     setLon(items.city.coord.lon);
     setCountry(items.city.country);
     setCity(items.city.name);
+
 // navigate('/city');
 
 
