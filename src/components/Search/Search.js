@@ -16,38 +16,26 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
     setSearch(input.current.value);
   }, 1000);
 
-  const [items, setItems] = useState([]);
-
   useEffect(() => {
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
       .then(res => res.json())
       .then(
         (result) => {
-          setItems(result);
+          console.log(result)
+          if (result.cod === "200") {
+            setLat(result.city.coord.lat);
+            setLon(result.city.coord.lon);
+            setCountry(result.city.country);
+            setCity(result.city.name);
+            navigate('/city');
+          }
         })
-        return () => setSearch('');
+    return () => setSearch('');
   }, [search]);
 
-  if (items.cod !== '200') {
-    return (
-      <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
-    );
-  }
-
-  else {
-    
-    setLat(items.city.coord.lat);
-    setLon(items.city.coord.lon);
-    setCountry(items.city.country);
-    setCity(items.city.name);
-
-// navigate('/city');
-
-
-    return (
-      <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
-    );
-  }
+  return (
+    <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
+  );
 }
 
 export default Search;
