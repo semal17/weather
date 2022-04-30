@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { debounce } from "lodash";
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import './Search.css';
 
@@ -31,7 +31,9 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
           }
         })
     return () => setSearch('');
+
   }, [search]);
+
 
   return (
     <input className={classSearch} onInput={searchCity} ref={input} type="search" placeholder="Search City"></input>
