@@ -17,7 +17,7 @@ function Search({ classSearch, search, setSearch, setLat, setLon, setCountry, se
   }, 1000);
 
   useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${search}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)
       .then(res => res.json())
       .then(
         (result) => {

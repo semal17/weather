@@ -49,11 +49,11 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch, setLat, s
 
 
   useEffect(() => {
-    Promise.all([fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude - 2}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude - 2}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=Moscow&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=Saint%20Petersburg&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)])
+    Promise.all([fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude - 2}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude - 2}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`),
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=Moscow&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=Saint%20Petersburg&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025"),
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=f6c26928d4edcccd56bcd02855ffd025`)])
       .then(res => Promise.all(res.map(r => r.json())))
       .then(
         (result) => {
