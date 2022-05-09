@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 import './Card.css';
-import Time from '../Time/Time';
 
 
 function Card(props) {
