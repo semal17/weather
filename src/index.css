@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar { width: 10px; cursor: pointer;}
+html::-webkit-scrollbar-button {  background-color: #7F7F7F; height: 20px; border-radius: 0 8px; opacity: 0.5;}
+html::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+html::-webkit-scrollbar-thumb { height: 50px; background-color: #E8E8E8; border-radius: 8px;}
+
 * {
   padding: 0;
   margin: 0;

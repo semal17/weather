@@ -1,4 +1,3 @@
-
 import './Time.css';
 
 function Time(props) {

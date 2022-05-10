@@ -3,7 +3,7 @@ import './Hours.css';
 
 function Hours({ items, day, weekDay, unit }) {
 
-  let hours = items.slice(1, 10);
+  let hours = items.slice(1, 17);
   let firstHour = items.slice(0, 1);
 
   function convertToF(celsius) {
