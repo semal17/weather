@@ -23,7 +23,7 @@ function Adds({ latitude, longitude, unit, setUnit, search, setSearch, setLat, s
   const hiddenDay = 'header-day heder-day--none';
   const logoText = 'Weather';
   const styleText = 'header-logo__text header-logo__text--size';
-  const headerTitle = 'Add City';
+  const headerTitle = 'Search City';
   const timeClass = 'time-now';
   const searchAdd = 'search search--mobile';
   const timeNow = <TimeNow displayNone={timeClass} />;
