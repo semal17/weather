@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './Card.css';
-
+//weather
 
 function Card(props) {
   const unit = props.unit;
